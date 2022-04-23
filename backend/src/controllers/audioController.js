@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const path = require('path');
 
 module.exports = {
   audioCreate: async (req, res) => {
@@ -12,7 +13,8 @@ module.exports = {
       });
       res.status(200).send({ msg: "The audio was created" });
     } catch (error) {
-      next(error);
+      // next(error);
+      res.status(500).send({ msg: "There was an error" });
     }
   },
 
@@ -56,4 +58,7 @@ module.exports = {
       next(error);
     }
   },
+  getIndexHtml: (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'))
+  }
 };
