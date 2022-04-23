@@ -10,7 +10,7 @@ require('dotenv').config()
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": 'd06+M4$/)b',
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
