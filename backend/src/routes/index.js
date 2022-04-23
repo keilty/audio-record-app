@@ -1,9 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const { audioCreate, audioDestroy, audioUpdate, audioList } = require('../controllers/audioController');
+const { themeList } = require('../controllers/themeController');
+const { recipientList } = require('../controllers/recipientController');
+
+router
+.post('/create', audioCreate)
+.delete('/delete/:id', audioDestroy)
+.patch('/update/:id', audioUpdate)
+.get('/audio', audioList)
+
+.get('/theme', themeList)
+
+.get('/recipient', recipientList)
 
 module.exports = router;
