@@ -1,3 +1,4 @@
+
 .record-button {
   height: 8em;
   width: 8em;
@@ -17,52 +18,74 @@
 
 .pt-5 {
   background-color:bisque;
+  width: 100%;
 }
 
 .select {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  margin-bottom: 30px;
+  width: 50%;
+  margin: auto;
+}
 
-  .form-select {
-    width: 200px;
-    margin: 20px;
-  }
-  
-  .audios {
-    width: 60vw;
-    margin: 20px auto;
-  }
+.audios {
+  width: 95%;
+  margin: 20px auto;
+}
 
-  .audio {
-    margin: 10px;    
-    display: flex;    
-    justify-content: space-between;
-    background-color: #f3f3f3;
-    padding: 30px;
-    border-radius: 10px;
-  }
+.audio {
+  display: flex;    
+  justify-content: space-around;
+  text-align: center;
+  background-color: #f3f3f3;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.recipient-theme {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.recipient {
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 50px;
+}
+
+.form-select {
+  margin: 20px;
+}
+
+.controls {
+  margin-top: 15px;
+  width: 30%;
+}
 
 .buttons {
-  width: 40%;
+  width: 30%;
   display: flex;
-  justify-content: end;
-  border-radius: 10px;
+  justify-content: center;
 }
 
 .btn-edit { 
   background-color: rgb(35, 163, 35);
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 5px;
   text-decoration: none;
   color: white;
+  border-radius: 60px;
 }
 
 .btn-delete {
   background-color: rgb(250, 56, 56);
-  margin-left: 20px;
+  height: 80px;
+  margin-left: 15px;
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 5px;
   text-decoration: none;
   color: white;
+  border-radius: 60px;
 }

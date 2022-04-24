@@ -14,7 +14,7 @@
     <link href="/assets/css/index.css" rel="stylesheet" />
   </head>
   <body class="pt-5">
-    <div class="container">
+    <div class="">
       <form method="post">
         <div class="select">
           <select
@@ -42,19 +42,7 @@
           </select>
         </div>
       </form>
-        <!-- 
-        <button
-          type="submit"
-          disabled
-          style="display: none"
-          aria-hidden="true"
-        ></button>
-        <input
-          class="btn btn-success"
-          type="submit"
-          name="submit"
-          value="Save"
-        /> -->
+
       </form>
       <h1 class="text-center">Record Your Voice</h1>
       <div class="record-button-container text-center mt-5">
@@ -100,26 +88,28 @@
         <% audios.forEach(audio => { %>
           <form action="/update/<%= audio.id %>?_method=PATCH" method="POST">
           <div class="audio">
+            <div class="recipient-theme">
+              <h5 class="recipient"><%= audio.recipient.name %></h5>
+  
+              <select class="form-select" name="theme_id" >
+                <option value="" selected hidden><%= audio.theme.name %></option>
+                <% themes.forEach(theme => { %>
+                <option value="<%= theme.id %>"><%= theme.name %></option>
+                <% }) %>
+              </select> 
+            </div>
 
-            <h5 class="card-text"><%= audio.recipient.name %></h5>
-
-            <select class="form-select" name="theme_id" >
-              <option value="" selected hidden><%= audio.theme.name %></option>
-              <% themes.forEach(theme => { %>
-              <option value="<%= theme.id %>"><%= theme.name %></option>
-              <% }) %>
-          </select> 
           
-          <div class="mp3">
-            <audio controls src="/assets/uploads/<%= audio.name %>" type="audio/mpeg"></audio>
-          </div>
+         
+            <audio class="controls" controls src="/assets/uploads/<%= audio.name %>" type="audio/mpeg"></audio>
+          
            
             <div class="buttons">
               <button onclick="return confirm('¿Are you sure you want to edit the theme?');" class="btn-edit">Edit Theme</button>
             </form>
 
             <form action="/delete/<%= audio.id %>?_method=DELETE" method="POST">
-              <button onclick="return confirm('¿Are you sure you want to delete the theme?');" class="btn-delete">Delete<button>
+              <button onclick="return confirm('¿Are you sure you want to delete the theme?');" class="btn-delete">Delete</button>
             </div>
             </form>            
 

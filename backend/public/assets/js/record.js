@@ -79,44 +79,6 @@ function resetRecording() {
   audioBlob = null;
 }
 
-function playRecording(e) {
-  let button = e.target;
-  if (button.tagName === 'IMG') {
-    // get parent button
-    button = button.parentElement;
-  }
-  const audio = button.previousElementSibling;
-  if (audio && audio.tagName === 'AUDIO') {
-    if (audio.paused) {
-      audio.play();
-      button.firstElementChild.src = 'images/pause.png';
-    } else {
-      audio.pause();
-      button.firstElementChild.src = 'images/play.png';
-    }
-  }
-}
-
-function createRecordingElement(file) {
-  const recordingElement = document.createElement('div');
-  recordingElement.classList.add('col-lg-2', 'col', 'recording', 'mt-3');
-  const audio = document.createElement('audio');
-  audio.src = file;
-  audio.onended = (e) => {
-    e.target.nextElementSibling.firstElementChild.src = './assets/images/play.png';
-  };
-  recordingElement.appendChild(audio);
-  const playButton = document.createElement('button');
-  playButton.classList.add('play-button', 'btn', 'border', 'shadow-sm', 'text-center', 'd-block', 'mx-auto');
-  const playImage = document.createElement('img');
-  playImage.src = '/images/play.png';
-  playImage.classList.add('img-fluid');
-  playButton.appendChild(playImage);
-  playButton.addEventListener('click', playRecording);
-  recordingElement.appendChild(playButton);
-  return recordingElement;
-}
-
 // fetch recordings
 function fetchRecordings() {
   fetch('/audio')
