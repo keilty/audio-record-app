@@ -107,7 +107,7 @@
               <option value="" selected hidden><%= audio.theme.name %></option>
               <% themes.forEach(theme => { %>
               <option value="<%= theme.id %>"><%= theme.name %></option>
-            <% }) %>
+              <% }) %>
           </select>          
            
             <div class="buttons">
@@ -119,8 +119,13 @@
             </div>
             </form>
 
+            <audio controls src="/assets/uploads/example.mp3" type="audio/mpeg">
+              
+            </audio>
+
           </div>
           <% }) %>
+
       </div>
       
       
