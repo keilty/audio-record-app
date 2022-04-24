@@ -32,29 +32,7 @@ describe("Audio", () => {
     });
   });
   /*
-   * Test the /POST route
-   */
-  describe("/POST audio", () => {
-    it("it should POST an audio", (done) => {
-      let newAudio = {
-        name: "Audio create",
-        theme_id: 2,
-        recipient_id: 2,
-      };
-      chai
-        .request(app)
-        .post("/create")
-        .send(newAudio)
-        .end((err, res) => {
-          expect(res).to.have.status(200);
-          expect(res).to.be.an("object");
-          expect(res.body).to.have.property("msg").eql("The audio was created");
-          done();
-        });
-    });
-  });
-  /*
-   * Test the /PUT/:id route
+   * Test the /PATCH/:id route
    */
   describe("/PATCH/:id audio", () => {
     it("it should UPDATE an audio theme given the id", (done) => {
@@ -66,9 +44,8 @@ describe("Audio", () => {
         .patch("/update/1")
         .send(themeUpdate)
         .end((err, res) => {
-          expect(res).to.have.status(201);
+          expect(res).to.have.status(200);
           expect(res).to.be.an("object");
-          expect(res.body).to.have.property("msg").eql("The audio was updated");
           done();
         });
     });
@@ -82,10 +59,8 @@ describe("Audio", () => {
         .request(app)
         .delete("/delete/1")
         .end((err, res) => {
-          expect(res).to.have.status(201);
+          expect(res).to.have.status(200);
           expect(res).to.be.an("object");
-          expect(res.body).to.have.property("msg").eql("The audio was deleted");
-          // expect(response.body.audio).to.have.property("ok").eql(1);
           done();
         });
     });
