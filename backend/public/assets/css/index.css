@@ -24,7 +24,26 @@
     justify-content: center;
   }
 
-.form-select {
-  width: 200px;
-  margin: 20px;
-}
+  .form-select {
+    width: 200px;
+    margin: 20px;
+  }
+  
+  .audios {
+    width: 60vw;
+    margin: 20px auto;
+  }
+
+  .audio {
+    margin: 10px;    
+    display: flex;    
+    justify-content: space-between;
+    background-color: #f3f3f3;
+    padding: 30px;
+  }
+  
+  .buttons {
+    width: 40%;
+    display: flex;
+    justify-content:end
+  }
