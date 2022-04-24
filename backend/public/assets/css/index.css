@@ -22,9 +22,8 @@
 }
 
 .select {
-  display: flex;
-  margin-bottom: 30px;
-  width: 50%;
+  display: block;  
+  width: 70%;
   margin: auto;
 }
 
@@ -34,25 +33,18 @@
 }
 
 .audio {
-  display: flex;    
-  justify-content: space-around;
-  text-align: center;
+  display: block;    
+  margin: 15px 5px;
   background-color: #f3f3f3;
-  padding: 25px;
   border-radius: 10px;
-  margin: 20px;
 }
 
 .recipient-theme {
-  width: 30%;
-  display: flex;
-  justify-content: space-around;
+  width: 80%;
 }
 
 .recipient {
-  margin-top: 20px;
-  margin-right: 20px;
-  width: 50px;
+ text-align: center;
 }
 
 .form-select {
@@ -60,32 +52,81 @@
 }
 
 .controls {
-  margin-top: 15px;
-  width: 30%;
+  width: 70%;
+  margin: auto;
 }
 
 .buttons {
-  width: 30%;
+  width: 10%;
   display: flex;
   justify-content: center;
+  margin: auto;
+  padding-bottom: 20px;
 }
 
 .btn-edit { 
-  background-color: rgb(35, 163, 35);
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: rgb(35, 163, 35);
   text-decoration: none;
-  color: white;
-  border-radius: 60px;
+  font-size: 30px;
+  border: none;
 }
 
 .btn-delete {
-  background-color: rgb(250, 56, 56);
-  height: 80px;
-  margin-left: 15px;
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: rgb(250, 56, 56);
+  margin-left: 50px;
   text-decoration: none;
-  color: white;
-  border-radius: 60px;
+  font-size: 30px;
+  border: none;
+}
+
+@media (min-width: 768px) {
+
+  .select {
+    display: flex;
+    width: 50%;
+  } 
+  
+  .audio {
+    display: flex;    
+    justify-content: space-around;
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+
+  .recipient-theme {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .recipient {
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 80px;
+  }
+
+  .controls {
+    margin-top: 15px;
+    width: 30%;
+  }
+
+  .buttons {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0px;
+  }
+
+  .btn-edit {      
+    font-size: 40px;
+  }
+  
+  .btn-delete { 
+    height: 80px;
+    margin-left: 25px; 
+    font-size: 50px;
+  }
 }
