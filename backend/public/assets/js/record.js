@@ -101,8 +101,6 @@ function createRecordingElement(file) {
   const recordingElement = document.createElement('div');
   recordingElement.classList.add('col-lg-2', 'col', 'recording', 'mt-3');
   const audio = document.createElement('audio');
-  // const name = document.createElement('div');
-  // name.appendChild('sarasa')
   audio.src = file;
   audio.onended = (e) => {
     e.target.nextElementSibling.firstElementChild.src = './assets/images/play.png';
@@ -142,7 +140,6 @@ function saveRecording() {
   const theme = document.getElementById("theme").value;   
   formData.append('audio', audioBlob, 'recording.mp3');
   formData.append('name', Math.floor(Math.random() * 10000000000));
-  formData.append('date_time', new Date());
   formData.append('theme_id', theme);
   formData.append('recipient_id', recipient);
   fetch('/recordaudio', {

@@ -12,7 +12,6 @@ describe("Audio", () => {
     beforeEach(async () => {
       await db.Audio.create({
         name: "Audio test",
-        date_time: "2020-01-01",
         theme_id: 1,
         recipient_id: 1,
       });
@@ -39,7 +38,6 @@ describe("Audio", () => {
     it("it should POST an audio", (done) => {
       let newAudio = {
         name: "Audio create",
-        date_time: "2020-01-01",
         theme_id: 2,
         recipient_id: 2,
       };

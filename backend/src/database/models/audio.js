@@ -26,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Audio.init({
     name: DataTypes.STRING,
-    date_time: DataTypes.DATE,
     theme_id: DataTypes.INTEGER,
     recipient_id: DataTypes.INTEGER
   }, {

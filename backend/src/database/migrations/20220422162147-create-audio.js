@@ -12,12 +12,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      date_time: {
-        type: Sequelize.DATE
-      },
       theme_id: {
         type: Sequelize.INTEGER,
-        // allowNull: false,
+        allowNull: false,
         references: {
           model:{
             tableName: "Themes"
@@ -27,7 +24,7 @@ module.exports = {
       },
       recipient_id: {
         type: Sequelize.INTEGER,
-        // allowNull: false,
+        allowNull: false,
         references: {
           model:{
             tableName: "Recipients"
