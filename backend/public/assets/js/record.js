@@ -138,11 +138,13 @@ function fetchRecordings() {
 
 function saveRecording() {
   const formData = new FormData();
+  const recipient = document.getElementById("recipient").value; 
+  const theme = document.getElementById("theme").value;   
   formData.append('audio', audioBlob, 'recording.mp3');
   formData.append('name', Math.floor(Math.random() * 10000000000));
   formData.append('date_time', new Date());
-  // formData.append('theme_id', 234);
-  // formData.append('recipient:id', 235);
+  formData.append('theme_id', theme);
+  formData.append('recipient_id', recipient);
   fetch('/recordaudio', {
     method: 'POST',
     body: formData,
