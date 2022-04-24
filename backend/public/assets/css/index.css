@@ -40,10 +40,33 @@
     justify-content: space-between;
     background-color: #f3f3f3;
     padding: 30px;
+    border-radius: 10px;
   }
   
-  .buttons {
-    width: 40%;
-    display: flex;
-    justify-content:end
-  }
+.audio:nth-child(even){
+  background-color:rgb(211, 205, 198);
+}
+
+.buttons {
+  width: 40%;
+  display: flex;
+  justify-content: end;
+  border-radius: 10px;
+}
+
+.btn-edit { 
+  background-color: rgb(35, 163, 35);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-delete {
+  background-color: rgb(250, 56, 56);
+  margin-left: 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+}

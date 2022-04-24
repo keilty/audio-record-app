@@ -5,7 +5,9 @@ module.exports = {
 
     let recipients = db.Recipient.findAll()
     let themes = db.Theme.findAll()
-    let audios = db.Audio.findAll()
+    let audios = db.Audio.findAll({
+      include: ['theme', 'recipient']
+    })
     
     Promise.all([recipients, themes, audios])
         .then(([recipients, themes, audios]) => {

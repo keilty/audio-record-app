@@ -24,13 +24,28 @@ module.exports = {
       await db.Audio.destroy({
         where: { id: id },
       });
-      return res.status(201).send({ msg: "The audio was deleted" });
+      let recipients = db.Recipient.findAll()
+      let themes = db.Theme.findAll()
+      let audios = db.Audio.findAll({
+      include: ['theme', 'recipient']
+    }) 
+
+      Promise.all([recipients, themes, audios])
+      .then(([recipients, themes, audios]) => {
+          return res.render('index', { 
+              recipients, 
+              themes,
+              audios            
+          })
+      })
+      // res.status(200).send({ msg: "The audio has been deleted" });
     } catch (error) {
       res.status(500).send({ msg: "The audio has not been deleted" });
     }
   },
 
-  audioUpdate: async (req, res) => {
+  audioUpdate: async (req, res) => {      
+
     const { id } = req.params;
     const { theme_id } = req.body;
     try {
@@ -44,7 +59,22 @@ module.exports = {
           },
         }
       );
-      return res.status(201).send({ msg: "The audio was updated" });
+
+      let recipients = db.Recipient.findAll()
+      let themes = db.Theme.findAll()
+      let audios = db.Audio.findAll({
+      include: ['theme', 'recipient']
+    }) 
+
+      Promise.all([recipients, themes, audios])
+      .then(([recipients, themes, audios]) => {
+          return res.render('index', { 
+              recipients, 
+              themes,
+              audios            
+          })
+      })
+      // res.status(201).send({ msg: "The audio has been updated" });
     } catch (error) {
       res.status(500).send(error);
     }
