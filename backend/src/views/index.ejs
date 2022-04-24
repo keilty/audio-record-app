@@ -108,20 +108,20 @@
               <% themes.forEach(theme => { %>
               <option value="<%= theme.id %>"><%= theme.name %></option>
               <% }) %>
-          </select>          
+          </select> 
+          
+          <div class="mp3">
+            <audio controls src="/assets/uploads/<%= audio.name %>" type="audio/mpeg"></audio>
+          </div>
            
             <div class="buttons">
-              <button onclick="return confirm('¿Desea eliminar el producto permanentemente?');" class="btn-edit">Edit Theme</button>
+              <button onclick="return confirm('¿Are you sure you want to edit the theme?');" class="btn-edit">Edit Theme</button>
             </form>
 
             <form action="/delete/<%= audio.id %>?_method=DELETE" method="POST">
-              <button onclick="return confirm('¿Desea eliminar el producto permanentemente?');" class="btn-delete">Delete<button>
+              <button onclick="return confirm('¿Are you sure you want to delete the theme?');" class="btn-delete">Delete<button>
             </div>
-            </form>
-
-            <audio controls src="/assets/uploads/example.mp3" type="audio/mpeg">
-              
-            </audio>
+            </form>            
 
           </div>
           <% }) %>

@@ -42,10 +42,6 @@
     padding: 30px;
     border-radius: 10px;
   }
-  
-.audio:nth-child(even){
-  background-color:rgb(211, 205, 198);
-}
 
 .buttons {
   width: 40%;

@@ -4,9 +4,9 @@ const path = require('path');
 module.exports = {
   audioCreate: async (req, res) => {
     try {
-      const { name, theme_id, recipient_id } = req.body;
+      const { theme_id, recipient_id } = req.body;
       await db.Audio.create({
-        name: name,
+        name: req.file.filename,
         theme_id: theme_id,
         recipient_id: recipient_id,
       });
