@@ -64,8 +64,5 @@ module.exports = {
       .catch((error) => {
         res.send(error)
       })
-  },
-  getIndexHtml: (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
   }
 };

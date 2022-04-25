@@ -1,7 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-alert */
-/* eslint-disable no-restricted-globals */
-// initialize elements we'll use
 const recordButton = document.getElementById('recordButton');
 const recordButtonImage = recordButton.firstElementChild;
 const recordedAudioContainer = document.getElementById('recordedAudioContainer');
@@ -42,7 +38,7 @@ function record() {
     return;
   }
 
-  // browser supports getUserMedia
+  
   // change image in button
   recordButtonImage.src = `./assets/images/${mediaRecorder && mediaRecorder.state === 'recording' ? 'microphone' : 'stop'}.png`;
   if (!mediaRecorder) {
@@ -88,7 +84,6 @@ function fetchRecordings() {
         recordingsContainer.innerHTML = ''; // remove all children
         response.files.forEach((file) => {
           const recordingElement = createRecordingElement(file);
-          // console.log(file, recordingElement);
           recordingsContainer.appendChild(recordingElement);
         });
       }
@@ -112,6 +107,7 @@ function saveRecording() {
       alert('Your recording is saved');
       resetRecording();
       fetchRecordings();
+      document.location.reload()
     })
     .catch((err) => {
       console.error(err);
