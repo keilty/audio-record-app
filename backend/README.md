@@ -27,9 +27,9 @@ This is the repository for an audio recorder API.
     * sequelize db:migrate
     * sequelize db:seed:all
 
-- Console: npm start.
+- Console: npm start
 - The app will run at localhost:3100
 
 ## Testing
 
-- Console: npm start.
+- Console: npm test
